@@ -1,4 +1,4 @@
-import { TreeComponent } from "./tree.component";
+import { TreeComponent } from './tree.component';
 import { Story, Meta } from '@storybook/angular/types-6-0';
 export default {
   title: 'UI/Tree',
@@ -6,7 +6,7 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as Meta
+} as Meta;
 
 const Template: Story<TreeComponent> = (args: TreeComponent) => ({
   component: TreeComponent,
