@@ -2,6 +2,8 @@
     "pipes": [],
     "interfaces": [],
     "injectables": [],
+    "guards": [],
+    "interceptors": [],
     "classes": [],
     "directives": [],
     "components": [
@@ -29,6 +31,8 @@
                 {
                     "name": "title",
                     "defaultValue": "'intro-storybook-angular-template'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "string",
                     "optional": false,
                     "description": "",
@@ -36,10 +40,12 @@
                 }
             ],
             "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
-            "rawdescription": "",
+            "rawdescription": "\n",
             "type": "component",
             "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent {\n  title = 'intro-storybook-angular-template';\n}\n",
             "assetsDirs": [],
@@ -72,6 +78,9 @@
             "inputsClass": [
                 {
                     "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "What background color to use",
                     "description": "<p>What background color to use</p>\n",
                     "line": 26,
                     "type": "string"
@@ -79,18 +88,49 @@
                 {
                     "name": "label",
                     "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 711,
+                            "end": 724,
+                            "flags": 4227072,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "kind": 317,
+                            "tagName": {
+                                "pos": 712,
+                                "end": 720,
+                                "flags": 4227072,
+                                "modifierFlagsCache": 0,
+                                "transformFlags": 0,
+                                "kind": 78,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "Button contents",
                     "description": "<p>Button contents</p>\n",
-                    "line": 40
+                    "line": 40,
+                    "type": "string"
                 },
                 {
                     "name": "primary",
                     "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "Is this the principal call to action on the page?",
                     "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 20
+                    "line": 20,
+                    "type": "boolean"
                 },
                 {
                     "name": "size",
                     "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "How large should the button be?",
                     "description": "<p>How large should the button be?</p>\n",
                     "line": 32,
                     "type": "\"small\" | \"medium\" | \"large\""
@@ -100,6 +140,9 @@
                 {
                     "name": "onClick",
                     "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nOptional click handler\n",
                     "description": "<p>Optional click handler</p>\n",
                     "line": 46,
                     "type": "EventEmitter"
@@ -107,10 +150,12 @@
             ],
             "propertiesClass": [],
             "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
-            "rawdescription": "",
+            "rawdescription": "\n",
             "type": "component",
             "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
             "assetsDirs": [],
@@ -154,36 +199,46 @@
                 {
                     "name": "user",
                     "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "line": 53,
-                    "type": "unknown"
+                    "type": ""
                 }
             ],
             "outputsClass": [
                 {
                     "name": "onCreateAccount",
                     "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "line": 62,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onLogin",
                     "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "line": 56,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onLogout",
                     "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "line": 59,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [],
             "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
-            "rawdescription": "",
+            "rawdescription": "\n",
             "type": "component",
             "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
             "assetsDirs": [],
@@ -216,36 +271,46 @@
                 {
                     "name": "user",
                     "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "line": 66,
-                    "type": "unknown"
+                    "type": ""
                 }
             ],
             "outputsClass": [
                 {
                     "name": "onCreateAccount",
                     "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "line": 75,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onLogin",
                     "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "line": 69,
                     "type": "EventEmitter"
                 },
                 {
                     "name": "onLogout",
                     "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "line": 72,
                     "type": "EventEmitter"
                 }
             ],
             "propertiesClass": [],
             "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
             "description": "",
-            "rawdescription": "",
+            "rawdescription": "\n",
             "type": "component",
             "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Learn Storybook\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n\n// export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (\n//   <article>\n//     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />\n\n// );\n// Page.propTypes = {\n//   user: PropTypes.shape({}),\n//   onLogin: PropTypes.func.isRequired,\n//   onLogout: PropTypes.func.isRequired,\n//   onCreateAccount: PropTypes.func.isRequired,\n// };\n\n// Page.defaultProps = {\n//   user: null,\n// };\n",
             "assetsDirs": [],
@@ -261,6 +326,13 @@
     "modules": [
         {
             "name": "AppModule",
+            "id": "module-AppModule-2710274dc3e843f2beee6a5ebfa59bd5",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { BrowserModule } from '@angular/platform-browser';\nimport { NgModule } from '@angular/core';\n\nimport { AppComponent } from './app.component';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\n\n@NgModule({\n  declarations: [\n    AppComponent\n  ],\n  imports: [\n    BrowserModule,\n    BrowserAnimationsModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -304,6 +376,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: true\n}"
             },
@@ -312,6 +386,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
             },
@@ -320,6 +396,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -328,6 +406,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -336,6 +416,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -344,6 +426,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -352,6 +436,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -360,6 +446,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/jest-config/__mocks__/globalMocks.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "() => {\n    let storage = {};\n    return {\n      getItem: key => (key in storage ? storage[key] : null),\n      setItem: (key, value) => (storage[key] = value || ''),\n      removeItem: key => delete storage[key],\n      clear: () => (storage = {}),\n    };\n  }"
             },
@@ -368,6 +456,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -376,6 +466,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -384,6 +476,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -392,6 +486,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "Story<Button>",
                 "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
             },
@@ -400,6 +496,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Header.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "Story<Header>",
                 "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
             },
@@ -408,6 +506,8 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
                 "type": "Story<Page>",
                 "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
             }
@@ -422,6 +522,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: true\n}"
                 }
@@ -432,6 +534,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
                 }
@@ -442,6 +546,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -450,6 +556,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -458,6 +566,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -466,6 +576,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -474,6 +586,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "Story<Button>",
                     "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
                 }
@@ -484,6 +598,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -492,6 +608,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -500,6 +618,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Header.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "Story<Header>",
                     "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
                 }
@@ -510,6 +630,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -518,6 +640,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "Template.bind({})"
                 },
@@ -526,6 +650,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/Page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
                 }
@@ -536,6 +662,8 @@
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/jest-config/__mocks__/globalMocks.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "() => {\n    let storage = {};\n    return {\n      getItem: key => (key in storage ? storage[key] : null),\n      setItem: (key, value) => (storage[key] = value || ''),\n      removeItem: key => delete storage[key],\n      clear: () => (storage = {}),\n    };\n  }"
                 }
