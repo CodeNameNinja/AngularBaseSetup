@@ -48,11 +48,11 @@
    * wrap the rule with curly brackets (e.g. `"{ui/*}": {}`)
    * see https://harmony-docs.bit.dev/aspects/variants for more info.
    **/
-   "teambit.angular/angular-v12@12.1.3": {},
+   "teambit.angular/angular-v12": {},
    "teambit.workspace/variants": {
      "*": {
        // Replace `v12` by the version of Angular that you want to use
-       "teambit.angular/angular-v12@12.1.3": { }
+       "teambit.angular/angular-v12": { }
      }
    },
    "teambit.generator/generator": {
