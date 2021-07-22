@@ -48,15 +48,17 @@
    * wrap the rule with curly brackets (e.g. `"{ui/*}": {}`)
    * see https://harmony-docs.bit.dev/aspects/variants for more info.
    **/
-  "teambit.workspace/variants": {
-    /**
-     * "*" is a special rule which applied on all components in the workspace.
-     **/
-    "*": {
-      /**
-       * uncomment to apply the chosen environment on all components.
-       **/
-      // "teambit.react/react": { }
-    }
-  }
+   "teambit.angular/angular-v12@x.x.x": {},
+   "teambit.workspace/variants": {
+     "*": {
+       // Replace `v12` by the version of Angular that you want to use
+       "teambit.angular/angular-v12@x.x.x": { }
+     }
+   },
+   "teambit.generator/generator": {
+     "aspects": [
+       // Replace `v12` by the version of Angular that you want to use
+       "teambit.angular/angular-v12"
+     ]
+   }
 }
